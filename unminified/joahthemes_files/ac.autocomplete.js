@@ -1,0 +1,1 @@
+﻿$(function(){$("input:text.AutocompleteSearchBox").autocomplete({minLength:2,source:function(t,e){$.ajax({type:"GET",url:"/store/Autocomplete.aspx?q="+t.term+"&o="+this.element.attr("data-AutocompleteSettings"),contentType:"application/json; charset=utf-8",dataType:"json",success:function(t){e($.map(t,function(t){return{label:t.Name+" ("+t.Type+")",value:t.Name}}))}})}})});
